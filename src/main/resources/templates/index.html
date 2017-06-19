@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>Página Inicial</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	
+         <!-- Bootstrap Core CSS -->
+    <link th:href="@{/layout/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link th:href="@{/layout/vendor/bootstrap/css/business-frontpage.css}" rel="stylesheet"/>
+
+</head>
+
+<body style="background-color: #CEECF5">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #F7D358">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CarniSosft</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                	<li>
+                        <a th:href="@{login}">Login</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#">Contato</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+    <header class="business-header">
+    	<img th:src="@{layout/images/tela_inicial.png}"/>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="tagline">Business Name or Tagline</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm-8">
+                <p>Introduce the visitor to the business using clear, informative text. Use well-targeted keywords within your sentences to make sure search engines can find the business.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et molestiae similique eligendi reiciendis sunt distinctio odit? Quia, neque, ipsa, adipisci quisquam ullam deserunt accusantium illo iste exercitationem nemo voluptates asperiores.</p>
+                <p>
+                    <a class="btn btn-default btn-lg" href="#">Call to Action &raquo;</a>
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+        <div class="row">
+        
+            <div class="col-sm-4">
+            	<img th:src="@{layout/images/grafico_01.png}"/>
+                <h2>Marketing Box #1</h2>
+                <p>These marketing boxes are a great place to put some information. These can contain summaries of what the company does, promotional information, or anything else that is relevant to the company. These will usually be below-the-fold.</p>
+            </div>
+
+            <div class="col-sm-4">
+            	<img th:src="@{layout/images/grafico_02.png}"/>
+                <h2>Marketing Box #2</h2>
+                <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            </div>
+
+            <div class="col-sm-4">
+            	<img th:src="@{layout/images/grafico_03.png}"/>
+                <h2>Marketing Box #3</h2>
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+     <!-- jQuery -->
+    <script th:src="@{/layout/vendor/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script th:src="@{/layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+</body>
+
+</html>

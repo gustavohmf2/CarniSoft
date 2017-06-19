@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layouts/layout">
+
+<head>
+
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <!-- Bootstrap Core CSS -->
+    <link th:href="@{/layout/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link th:href="@{/layout/vendor/metisMenu/metisMenu.min.css}" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet"/>
+
+    <!-- Morris Charts CSS -->
+    <link th:href="@{/layout/vendor/morrisjs/morris.css}" rel="stylesheet"/>
+	
+    <!-- Custom Fonts -->
+    <link th:href="@{/layout/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <script type="text/javascript">
+    
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data2 = google.visualization.arrayToDataTable([
+          ['Mês', 'Temperatura'],
+          ['Abril',  23],
+          ['Maio',  25],
+          ['Junho', 25]
+        ]);
+
+        var options = {
+          title: 'Variação média da temperatura ºC',
+          hAxis: {title: 'Mês',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+          width: 700,
+          height: 300
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+        chart.draw(data2, options);
+      }
+    </script>
+    
+    <script type="text/javascript">
+    
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Mês', 'Salinidade'],
+        ['Abril',  10],
+        ['Maio',  9.5],
+        ['Junho',  8]
+      ]);
+
+      var options = {
+        title: 'Variação média de slinidade (ppt)',
+        curveType: 'function',
+        legend: { position: 'bottom' },
+        width: 700,
+        height: 300
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+      chart.draw(data, options);
+    }
+    
+    </script>
+    
+    <script type="text/javascript">
+    
+	    google.charts.load('current', {'packages':['corechart']});
+	    google.charts.setOnLoadCallback(drawChart);
+	
+	    function drawChart() {
+	      var data = google.visualization.arrayToDataTable([
+	        ['Mês', 'Qtd'],
+	        ['Abril',  100],
+	        ['Maio',  200],
+	        ['Junho',  300]
+	      ]);
+	
+	      var options = {
+	        title: 'Total de ração (kg)',
+	        curveType: 'function',
+	        legend: { position: 'bottom' },
+	        width: 700,
+	        height: 300
+	      };
+	
+	      var chart = new google.visualization.LineChart(document.getElementById('curve_chart2'));
+	
+	      chart.draw(data, options);
+    }
+    
+    </script>
+    
+    
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mês', 'Macrobrachium rosenbergii', 'L. vannamei'],
+          ['Abril',  500,      500],
+          ['Maio',  750,       800],
+          ['Junho',  1030,      1200]
+        ]);
+
+        var options = {
+          title: 'Peso total do lote (Kg)',
+          hAxis: {title: 'Mês',  titleTextStyle: {color: '#333'}},
+          vAxis: {minValue: 0},
+          width: 700,
+          height: 300
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    
+    <script type="text/javascript">
+    
+	      google.charts.load('current', {'packages':['corechart']});
+	      google.charts.setOnLoadCallback(drawChart);
+	
+	      function drawChart() {
+	
+	        var data = google.visualization.arrayToDataTable([
+	          ['Task', 'Hours per Day'],
+	          ['Macrobrachium rosenbergii',     50],
+	          ['L. vannamei',     50]
+	        ]);
+	
+	        var options = {
+	          title: 'Tipos de camarões',
+	          width: 700,
+	          height: 300
+	        };
+	
+	        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+	
+	        chart.draw(data, options);
+	      }
+    </script>
+    
+       <script type="text/javascript">
+    
+	      google.charts.load('current', {'packages':['corechart']});
+	      google.charts.setOnLoadCallback(drawChart);
+	
+	      function drawChart() {
+	
+	        var data = google.visualization.arrayToDataTable([
+	          ['Task', 'Hours per Day'],
+	          ['Macrobrachium rosenbergii',     50],
+	          ['L. vannamei',     50]
+	        ]);
+	
+	        var options = {
+	          title: 'Tipos de camarões',
+	          width: 700,
+	          height: 300
+	        };
+	
+	        var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+	
+	        chart.draw(data, options);
+	      }
+    </script>
+    
+    <style type="text/css">
+    	body .modal fade {
+		    /* new custom width */
+		    width: 750px;
+	    }
+	    
+	    body .modal-dialog{
+	     /* new custom width */
+		    width: 750px;
+		 }
+    </style>
+    
+    
+
+</head>
+
+<body  style="background-color: #CEECF5">
+	
+	<section layout:fragment="conteudo">
+			
+			<div id="page-wrapper" >
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Painel de Controle</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                   <img th:src="@{/layout/images/tanque.png}" style="size: 10px"/>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">8</div>
+                                    <div>Tanques</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a  data-toggle="modal" data-target="#squarespaceModal" class="btn">Visualizar</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                   <img th:src="@{/layout/images/camaroes.png}"/>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">8</div>
+                                    <div>Lotes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a data-toggle="modal" data-target="#squarespaceModal2" class="btn">Visualizar</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <img th:src="@{/layout/images/camarao_01.png}"/>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">200</div>
+                                    <div>Camarões</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a data-toggle="modal" data-target="#squarespaceModal3" class="btn">Visualizar</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <img th:src="@{/layout/images/limpRac.png}"/>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">3</div>
+                                    <div>Alimentação e Limpeza</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <div class="panel-footer">
+                                <span class="pull-left"><a data-toggle="modal" data-target="#squarespaceModal4" class="btn">Visualizar</a></span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <!-- 01 -->
+		 <!-- line modal -->
+			<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  				<div class="modal-dialog">
+					<div class="modal-content" style="background-color: #CEECF5">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+							<h3 class="modal-title" id="lineModalLabel">Tanques</h3>
+						</div>
+						
+					<div class="modal-body" style="background-color: #CEECF5">
+					
+						<div id="chart_div2" style="width: 550px; height: 400px;"></div>
+						<div id="curve_chart" style="width: 550px; height: 400px;"></div>
+			
+					</div>
+		
+				</div>
+ 			 </div>
+		</div>
+
+        <!--  -->
+        <!-- 02 -->
+		 <!-- line modal -->
+			<div  class="modal fade" id="squarespaceModal2" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  				<div class="modal-dialog">
+					<div style="background-color: #CEECF5;" class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+							<h3 class="modal-title" id="lineModalLabel">Lotes</h3>
+						</div>
+						
+					<div class="modal-body" style="background-color: #CEECF5">
+ 
+                      <div id="piechart" style="width: 550px; height: 400px; background-color: #CEECF5;"></div>
+         			  <div id="chart_div" style="width: 600%; height: 400px;"></div>
+         			  	
+					</div>
+		
+				</div>
+ 			 </div>
+		</div>
+
+        <!--  -->
+        <!-- 03 -->
+		 <!-- line modal -->
+			<div class="modal fade" id="squarespaceModal3" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  				<div class="modal-dialog">
+					<div class="modal-content" style="background-color: #CEECF5">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+							<h3 class="modal-title" id="lineModalLabel">Camarões</h3>
+						</div>
+						
+					<div class="modal-body" style="background-color: #CEECF5">
+						
+						<div id="piechart2" style="width: 550px; height: 400px; background-color: #CEECF5;"></div>
+			
+		          
+                    </div>
+		
+				</div>
+		
+				</div>
+ 			 </div>
+		
+
+        <!--  -->
+        <!-- 04 -->
+		 <!-- line modal -->
+			<div class="modal fade" id="squarespaceModal4" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  				<div class="modal-dialog">
+					<div class="modal-content" style="background-color: #CEECF5">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+							<h3 class="modal-title" id="lineModalLabel">Alimentação e limpeza</h3>
+						</div>
+						
+					<div class="modal-body" style="background-color: #CEECF5">
+			
+			
+			           <div id="curve_chart2" style="width: 550px; height: 400px;"></div>
+                    </div>
+		
+				</div>
+		
+				</div>
+			</div>
+	        <!--  -->
+    
+	
+	</section>
+	
+    <!-- jQuery -->
+    <script th:src="@{/layout/vendor/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script th:src="@{/layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script th:src="@{/layout/vendor/metisMenu/metisMenu.min.js}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script th:src="@{/layout/vendor/raphael/raphael.min.js}"></script>
+    <script th:src="@{/layout/vendor/morrisjs/morris.min.js}"></script>
+    <script th:src="@{/layout/data/morris-data.js}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
+
+</body>
+
+</html>

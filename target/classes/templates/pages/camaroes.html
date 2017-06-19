@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layouts/layout">
+<head>
+
+    <title>Camarões</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Bootstrap Core CSS -->
+    <link th:href="@{layout/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link th:href="@{layout/vendor/metisMenu/metisMenu.min.css}" rel="stylesheet"/>
+
+    <!-- DataTables CSS -->
+    <link th:href="@{layout/vendor/datatables-plugins/dataTables.bootstrap.css}" rel="stylesheet"/>
+
+    <!-- DataTables Responsive CSS -->
+    <link th:href="@{layout/vendor/datatables-responsive/dataTables.responsive.css}" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link th:href="@{layout/dist/css/sb-admin-2.css}" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link th:href="@{layout/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body style="background-color: #CEECF5">
+
+    <section layout:fragment="conteudo">
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-1">
+                    <h1 class="page-header">Camarões</h1>
+                </div>
+                 <div class=" col-lg-1 col-md-offset-10" style="background-color: transparent;" align="right">
+                    <a href="#" data-toggle="modal" data-target="#squarespaceModal" class="btn-sm btn-default center-block">
+                    	<img th:src="@{/layout/images/novo_camarao.png}" style="size: 50px;"/>
+                    </a>
+                 </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            
+             <!-- line modal -->
+			<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" >
+  				<div class="modal-dialog">
+					<div class="modal-content" style="background-color: #CEECF5">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+							<h3 class="modal-title" id="lineModalLabel">Novo tanque</h3>
+						</div>
+						
+					<div class="modal-body" style="background-color: #CEECF5">
+			
+			
+		            <!-- content goes here -->
+					<form style="background-color: #CEECF5">
+					
+		              <div class="form-group row">
+		             	 <div class="col-sm-8">
+		                	<label for="exampleInputEmail1" class="col-sm-2">Nome:</label>
+		               	 	<input type="text" class="form-control col-sm-4 coll-offset-4" id="exampleInputEmail1" />
+		              	</div>
+		              </div>
+		              
+		              <div class="form-group row">
+           				 <label class="col-sm-4 control-label" for="textinput">Período de engorda:</label>
+            				<div class="col-sm-4">
+		                		<select class="form-control col-sm-4 coll-offset-4">
+		                			<option>Semanal</option>
+		                			<option>15 dias</option>
+		                			<option>Mensal</option>
+		                		</select>
+		               				
+		               		</div>
+		              </div>
+		              
+		               <div class="form-group row">
+           				 <label class="col-sm-2 control-label" for="textinput">Qtd ração:</label>
+            				<div class="col-sm-2">
+		                		<label for="exampleInputEmail1">Kg:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               			</div>
+		               	</div>
+		              
+		              <div class="form-group row">
+           				 <label class="col-sm-4 control-label" for="textinput">Período de troca de água:</label>
+            				<div class="col-sm-4">
+		                		<select class="form-control col-sm-4 coll-offset-4">
+		                			<option>Semanal</option>
+		                			<option>15 dias</option>
+		                			<option>Mensal</option>
+		                		</select>
+		               		</div>
+		              </div>
+		              <div class="form-group row">
+           				 <label class="col-sm-2 control-label" for="textinput">Temperatura:</label>
+            				<div class="col-sm-2">
+		                		<label for="exampleInputEmail1">Min:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               			</div>
+		               			
+		               		<div class="col-sm-2">
+		               			<label for="exampleInputEmail1">Max:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		              		</div>
+		              </div>
+		              <div class="form-group row">
+           				 <label class="col-sm-2 control-label" for="textinput">Salinidade:</label>
+            				<div class="col-sm-2">
+		                		<label for="exampleInputEmail1">Min:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               			</div>
+		               			
+		               		<div class="col-sm-2">
+		               			<label for="exampleInputEmail1">Max:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		              		</div>
+		              </div>
+		               <div class="form-group row">
+           				 <label class="col-sm-2 control-label" for="textinput">PH:</label>
+            				<div class="col-sm-2">
+		                		<label for="exampleInputEmail1">Min:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               			</div>
+		               			
+		               		<div class="col-sm-2">
+		               			<label for="exampleInputEmail1">Max:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		              		</div>
+		              </div>
+		               <div class="form-group row">
+           				 <label class="col-sm-2 control-label" for="textinput">Transparência da água:</label>
+            				<div class="col-sm-2">
+		                		<label for="exampleInputEmail1">Min:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               			</div>
+		               			
+		               		<div class="col-sm-2">
+		               			<label for="exampleInputEmail1">Max:</label>
+		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		              		</div>
+		              </div>
+		              
+		              <button type="submit" class="btn btn-success">Cadastrar</button>
+		            </form>
+		
+				</div>
+		
+				</div>
+ 			 </div>
+		</div>	
+            
+            
+            
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"  style="background-color: #CEECF5">
+                            Macrobrachium rosenbergii
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Período de engorda</th>
+                                            <th>Período de troca de água</th>
+                                            <th>Temperatura</th>
+                                            <th>PH</th>
+                                            <th>Salinidade</th>
+                                            <th>Transpaência da água</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Semanal</td>
+                                            <td>15 dias</td>
+                                            <td>25º C</td>
+                                            <td>8 ppt</td>
+                                            <td>8,2</td>
+                                            <td>5,2</td>
+                                        </tr>  
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"  style="background-color: #CEECF5">
+                            L. vannamei
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                          <tr>
+                                            <th>Período de engorda</th>
+                                            <th>Período de troca de água</th>
+                                            <th>Temperatura</th>
+                                            <th>PH</th>
+                                            <th>Salinidade</th>
+                                            <th>Transpaência da água</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        	<td>15 dias</td>
+                                            <td>15 dias</td>
+                                            <td>24º C</td>
+                                            <td>8,1 ppt</td>
+                                            <td>8</td>
+                                            <td>5,2</td>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            
+           
+        </div>
+        <!-- /#page-wrapper -->
+
+    </section>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script th:src="@{layout/vendor/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script th:src="@{layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script th:src="@{layout/vendor/metisMenu/metisMenu.min.js}"></script>
+
+    <!-- DataTables JavaScript -->
+    <script th:src="@{layout/vendor/datatables/js/jquery.dataTables.min.js}"></script>
+    <script th:src="@{layout/vendor/datatables-plugins/dataTables.bootstrap.min.js}"></script>
+    <script th:src="@{layout/vendor/datatables-responsive/dataTables.responsive.js}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script th:src="@{layout/dist/js/sb-admin-2.js}"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+            responsive: true
+        });
+    });
+    </script>
+
+</body>
+
+</html>

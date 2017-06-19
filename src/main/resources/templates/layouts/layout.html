@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+
+    <title>Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <!-- Bootstrap Core CSS -->
+    <link th:href="@{/layout/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link th:href="@{/layout/vendor/metisMenu/metisMenu.min.css}" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link th:href="@{/layout/dist/css/sb-admin-2.css}" rel="stylesheet"/>
+
+    <!-- Morris Charts CSS -->
+    <link th:href="@{/layout/vendor/morrisjs/morris.css}" rel="stylesheet"/>
+
+    <!-- Custom Fonts -->
+    <link th:href="@{/layout/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+
+   
+
+</head>
+
+<body  style="background-color: #CEECF5">
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0;background-color: #F7D358" >
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">CarniSoft</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation"   style="background-color: #CEECF5">
+                <div class="sidebar-nav navbar-collapse" > 
+                    <ul class="nav" id="side-menu">
+                        <li class="sidebar-search" >
+                            
+                            <!-- /input-group -->
+                        </li>
+                        <li>
+                            <a th:href="@{../painelControle}" style="color: black"><i class="fa fa-dashboard fa-fw"></i>Painel de Controle</a>
+                        </li>
+                       
+                        <li>
+                            <a th:href="@{../tanques}" style="color: black"><i class="fa fa-table fa-fw"></i> Tanques</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../lotes}" style="color: black"><i class="fa fa-edit fa-fw"></i> Lotes</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../camaroes}" style="color: black"><i class="fa fa-edit fa-fw"></i> Camarões</a>
+                        </li>
+                        <li>
+                            <a th:href="@{../alimetacaoLimpeza}" style="color: black"><i class="fa fa-edit fa-fw"></i> Alimentação e Limpeza </a>
+                        </li>
+                     
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        
+        <section class="aw-layout-content  js-content" layout:fragment="conteudo"></section>
+
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script th:src="@{/layout/vendor/jquery/jquery.min.js}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script th:src="@{/layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script th:src="@{/layout/vendor/metisMenu/metisMenu.min.js}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script th:src="@{/layout/vendor/raphael/raphael.min.js}"></script>
+    <script th:src="@{/layout/vendor/morrisjs/morris.min.js}"></script>
+    <script th:src="@{/layout/data/morris-data.js}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script th:src="@{/layout/dist/js/sb-admin-2.js}"></script>
+
+</body>
+
+</html>
