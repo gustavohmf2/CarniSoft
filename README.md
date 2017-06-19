@@ -14,8 +14,12 @@ Protótipo de Alta Fidelidade do sistema CarniSoft
 1. Baixar o projeto do [github](https://github.com/rodrigondec/er_CarniSoft)
 2. Abrir o Eclipse
 3. Importar o projeto como _**Existing Maven Projects**_
-4. 
+
 ### Executando
+
+1. Abrir o projeto
+2. dar run no _**StarAplication.java**_
+3. dar Login no site com informações vazias
 
 
 
