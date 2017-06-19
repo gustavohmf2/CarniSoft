@@ -24,7 +24,40 @@
 
     <!-- Custom Fonts -->
     <link th:href="@{layout/vendor/font-awesome/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
+	
+	 <!-- jQuery -->
+    <script th:src="@{layout/vendor/jquery/jquery.min.js}"></script>
 
+    <!-- Bootstrap Core JavaScript -->
+    <script th:src="@{layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+	
+	<script type="text/javascript">
+
+		$(document).ready(function(){
+
+			var sel = $("#lote").val();
+			
+			
+			$("#lote").change(function(){
+
+				if(sel == "Lote 01"){
+					$("#alerta").html("Recomenda-se 50 Kg, para o lote 01 com 500 Kg de camarões");
+				}else if(sel == "Lote 02"){
+					$("#alerta").html("Recomenda-se 50 Kg, para o lote 02 com 500 Kg de camarões");
+				}else if(sel == "Lote 03"){
+					$("#alerta").html("Recomenda-se 50 Kg, para o lote 03 com 500 Kg de camarões");
+				}else if(sel == "Lote 04"){
+					$("#alerta").html("Recomenda-se 50 Kg, para o lote 04 com 500 Kg de camarões");
+				}
+					
+					$("#alerta").removeAttr("hidden");
+					
+			});
+	
+		});
+	</script>
+	
+	
 </head>
 
 <body style="background-color: #CEECF5">
@@ -58,14 +91,14 @@
 		              <div class="form-group row">
 		             	 <div class="col-sm-8">
 		                	<label for="exampleInputEmail1" class="col-sm-2">Responsável:</label>
-		               	 	<input type="text" class="form-control col-sm-4 coll-offset-4" id="exampleInputEmail1" />
+		               	 	<input type="text" class="form-control col-sm-4 coll-offset-4" id="responsavel" />
 		              	</div>
 		              </div>
 		              
 		               <div class="form-group row">
 		             	 <div class="col-sm-8">
 		                	<label for="exampleInputEmail1" class="col-sm-2">Categoria:</label>
-		               	 	<select class="form-control col-sm-4 coll-offset-4">
+		               	 	<select class="form-control col-sm-4 coll-offset-4" id="categoria">
 		               	 		<option>Tanque</option>
 		               	 		<option>Instalações</option>
 		               	 	</select>
@@ -74,7 +107,7 @@
 		              
 		              <div class="form-group row">
 		             	 <div class="col-sm-8">
-		                	<label for="exampleInputEmail1" class="col-sm-2">Local:</label>
+		                	<label for="exampleInputEmail1" class="col-sm-2" id="tanque">Local:</label>
 		               	 	<select class="form-control col-sm-4 coll-offset-4">
 		               	 		<option>Tanque 01</option>
 		               	 		<option>Tanque 02</option>
@@ -87,7 +120,7 @@
 		              
 		               <div class="form-group row">
 		             	 <div class="col-sm-8">
-		                	<label for="exampleInputEmail1" class="col-sm-2">Data/hora:</label>
+		                	<label for="exampleInputEmail1" class="col-sm-2" id="data">Data/hora:</label>
 		               	 	<input type="datetime" class="form-control col-sm-4 coll-offset-4" id="exampleInputEmail1" />
 		              	</div>
 		              </div>
@@ -117,23 +150,23 @@
 			
 		            <!-- content goes here -->
 					<form style="background-color: #CEECF5">
+					<div class="alert alert-warning" role="alert" hidden="true" id="alerta"></div>
 					
 		               <div class="form-group row">
 		             	 <div class="col-sm-8">
 		                	<label for="exampleInputEmail1" class="col-sm-2">Responsável:</label>
-		               	 	<input type="text" class="form-control col-sm-4 coll-offset-4" id="exampleInputEmail1" />
+		               	 	<input type="text" class="form-control col-sm-4 coll-offset-4" id="responsavel2" />
 		              	</div>
 		              </div>
 		              
 		              <div class="form-group row">
 		             	 <div class="col-sm-8">
-		                	<label for="exampleInputEmail1" class="col-sm-2">Tanque:</label>
-		               	 	<select class="form-control col-sm-4 coll-offset-4">
-		               	 		<option>Tanque 01</option>
-		               	 		<option>Tanque 02</option>
-		               	 		<option>Tanque 03</option>
-		               	 		<option>Tanque 04</option>
-		               	 		<option>Galpão 01</option>
+		                	<label for="exampleInputEmail1" class="col-sm-2">Lote:</label>
+		               	 	<select class="form-control col-sm-4 coll-offset-4" id="lote">
+		               	 		<option>Lote 01</option>
+		               	 		<option>Lote 02</option>
+		               	 		<option>Lote 03</option>
+		               	 		<option>Lote 04</option>
 		               	 	</select>
 		              	</div>
 		              </div>
@@ -141,7 +174,7 @@
 		              <div class="form-group row">
 		             	 <div class="col-sm-8">
 		                	<label for="exampleInputEmail1" class="col-sm-2">Ração:</label>
-		               	 	<select class="form-control col-sm-4 coll-offset-4">
+		               	 	<select class="form-control col-sm-4 coll-offset-4" id="racao">
 		               	 		<option>Prime</option>
 		               	 		<option>Com medicação</option>
 		               	 		<option>Extra</option>
@@ -153,18 +186,18 @@
            				 <label class="col-sm-2 control-label" for="textinput">Qtd ração:</label>
             				<div class="col-sm-2 col-offset-2">
             				<label for="exampleInputEmail1">Kg:</label>
-		               				 <input type="number" class="form-control sm" id="exampleInputEmail1"/>
+		               				 <input type="number" class="form-control sm" id="qtdracao"/>
 		               			</div>
 		               </div>	
 		              
 		               <div class="form-group row">
 		             	 <div class="col-sm-8">
 		                	<label for="exampleInputEmail1" class="col-sm-2">Data/hora:</label>
-		               	 	<input placeholder="MM/DD/YYY"  type="datetime" class="form-control col-sm-4 coll-offset-4" id="exampleInputEmail1" />
+		               	 	<input placeholder="MM/DD/YYY"  type="datetime" class="form-control col-sm-4 coll-offset-4" id="data2" />
 		              	</div>
 		              </div>
 		              
-		              <button type="submit" class="btn btn-success">Cadastrar</button>
+		              <button type="submit" class="btn btn-success" id="cadastrar2">Cadastrar</button>
 		            </form>
 		
 				</div>
@@ -247,8 +280,8 @@
                                             <th>Responsável</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
+                                    <tbody >
+                                        <tr id="alimentacao">
                                             <td>1</td>
                                             <td>03</td>
                                             <td>Ração Prime</td>
@@ -290,11 +323,7 @@
     </section>
     <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script th:src="@{layout/vendor/jquery/jquery.min.js}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script th:src="@{layout/vendor/bootstrap/js/bootstrap.min.js}"></script>
+   
 
     <!-- Metis Menu Plugin JavaScript -->
     <script th:src="@{layout/vendor/metisMenu/metisMenu.min.js}"></script>
