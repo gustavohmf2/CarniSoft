@@ -19,7 +19,8 @@ Protótipo de Alta Fidelidade do sistema CarniSoft
 
 1. Abrir o projeto
 2. dar run no _**StarAplication.java**_
-3. dar Login no site com informações vazias
+3. Acessar http://localhost:8080
+4. fazer login no site com informações vazias
 
 
 
